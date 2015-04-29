@@ -1,0 +1,12 @@
+lab4: main.o PreconditionViolationException.o 
+	g++ -g -std=c++11 main.o PreconditionViolationException.o -Wall -o lab4
+
+main.o: main.cpp Node.h Node.hpp StackInterface.h Stack.h Stack.hpp 
+	g++ -g -std=c++11 -Wall -c main.cpp
+
+PreconditionViolationException.o: PreconditionViolationException.h PreconditionViolationException.cpp
+	g++ -g -std=c++11 -c PreconditionViolationException.cpp
+
+clean:
+	rm *.o lab4
+	echo clean done

@@ -1,0 +1,41 @@
+int a = 5; //stack allocated variable
+
+int *ptr; //declares a pointer
+
+//1 Step Version
+int *ptr = new int; //actually allocates the memory for the integer in the heap
+
+//2 Step Version
+int *ptr;
+*ptr = new int;
+
+//how to remove a pointer
+delete ptr;
+
+//LINKED LISTS
+A way to link objects together. Could be a series of numbers, each object point to the next.
+
+//What values will we need for node?
+
+NODE {
+
+public:
+-constructor --> Node()
+-setters
+-getter
+
+private:
+int val;
+int* ptr;
+
+
+LinkedList
+
+constructor
+destructor
+add front
+add back
+remove front
+remove back
+printList
+search

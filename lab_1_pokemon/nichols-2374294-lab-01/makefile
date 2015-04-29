@@ -1,0 +1,17 @@
+lab1: main.o Dice.o Pokemon.o Colosseum.o
+	g++ -std=c++11 -g main.o Dice.o Pokemon.o Colosseum.o -o lab1
+
+main.o: main.cpp Colosseum.h Pokemon.h
+	g++ -std=c++11 -g -c main.cpp
+
+Pokemon.o: Pokemon.h Pokemon.cpp Colosseum.o Dice.o
+	g++ -std=c++11 -g -c Pokemon.cpp
+
+Dice.o: Dice.h Dice.cpp
+	g++ -std=c++11 -g -c Dice.cpp
+
+Colosseum.o: Colosseum.h Colosseum.cpp Dice.o Pokemon.o
+	g++ -std=c++11 -g -c Colosseum.cpp
+
+clean:
+	rm *.o lab1
